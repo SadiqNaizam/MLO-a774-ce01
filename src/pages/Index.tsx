@@ -1,14 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import HeroSection from '../components/HeroSection/HeroSection';
+import StatsGrid from '../components/StatsGrid/StatsGrid';
+import PromotionsGrid from '../components/PromotionsGrid/PromotionsGrid';
+import FoodMenuGrid from '../components/FoodMenuGrid/FoodMenuGrid';
+import GallerySection from '../components/GallerySection/GallerySection';
+import SpecialMenuSection from '../components/SpecialMenuSection/SpecialMenuSection';
 
-const Index = () => {
+/**
+ * IndexPage serves as the main landing page for the Wellfood Chicken website.
+ * It aggregates all the primary sections of the site into a cohesive food overview experience.
+ * This page utilizes the MainAppLayout for consistent header, footer, and overall page structure.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainAppLayout title="Food Overview">
+      {/* HeroSection: Captures immediate attention with a prominent display of featured food. */}
+      <HeroSection />
+
+      {/* StatsGrid: Showcases key statistics about the restaurant, building trust and engagement. */}
+      <StatsGrid />
+
+      {/* PromotionsGrid: Highlights current special offers and promotions to attract customers. */}
+      <PromotionsGrid />
+
+      {/* FoodMenuGrid: Displays a selection of popular menu items. */}
+      <FoodMenuGrid />
+
+      {/* GallerySection: Features a visual gallery of food photography. */}
+      <GallerySection />
+
+      {/* SpecialMenuSection: Dedicated section for a prominent special menu offer. */}
+      <SpecialMenuSection />
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default IndexPage;
